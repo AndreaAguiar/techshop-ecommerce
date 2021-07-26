@@ -11,6 +11,7 @@ https://techshopx.netlify.app/
 O desafio consiste em fazer um sistema e-commerce contendo:
 
 1- Dados de clientes e produtos devidamente estruturados
+
 2- Dados no localstorage
 
 ### Como Usar

@@ -40,23 +40,33 @@ const Home: React.FC = () => {
           <img src="http://d3ugyf2ht6aenh.cloudfront.net/stores/001/649/091/themes/common/logo-450688138-1622758372-4146dbe9fe861e0b7e4bc1adcaf975b31622758372.png?0" alt="logo" width="200px" height="auto" />
         </div>
         <div className="cart">
-          <img src={Cart} alt="shopcart" width="50px" height="auto"/>
-        <span> ( {cart.length} ) - Itens </span> 
+          <img src={Cart} alt="shopcart" width="50px" height="auto" />
+          <span> ( {cart.length} ) - Itens </span>
         </div>
       </div>
-      <section>
-        {data.map( (prod, index) => (
+      <section className="section-one">
+        {data.map((prod, index) => (
           <div className="product-content" key={prod.id}>
             <img src={prod.photo} alt="iphone" width="auto" height="200" />
             <h4>{prod.name}</h4>
             <span>{prod.description}</span>
             <h6> R$ {prod.price}</h6>
-            <button onClick={ () => handleCart(index)}> Adicionar ao carrinho</button>
+            <button onClick={() => handleCart(index)}> Adicionar ao carrinho</button>
           </div>
         ))}
       </section>
+      <section className="section-two">
+      <h4>Cadastre-se</h4>
+      <div className="cadastro">
+        <form className="form">
+          <input type="text" placeholder="Name" id="nome"/>
+          <input type="text" placeholder="E-mail" id="email"/>
+          <input type="submit" value="Cadastrar"/>
+        </form>
+      </div>
+      </section>
     </Container>
-  );
+          );
 }
 
-export default Home;
+          export default Home;

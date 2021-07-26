@@ -18,8 +18,8 @@ export const Container = styled.div`
         align-items: center;
     }
 
-    section{
-        height: 85vh;
+    .section-one{
+        height: 70vh;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -31,6 +31,29 @@ export const Container = styled.div`
             background: #fff;
             border-radius: 12px;
             padding: 12px;            
+        }
+    }
+    .section-two{
+        height: 15vh;
+        text-align: center;
+
+        .cadastro{
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px;
+        }
+            
+        .form{
+            display: flex;
+        }
+
+        input{
+            width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+            text-align: center;
         }
     }
 `

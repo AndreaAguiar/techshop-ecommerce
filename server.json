@@ -1,0 +1,39 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "photo": "https://t.ctcdn.com.br/5Nf5QKu4DcQWT60fPRhdkLk_-mc=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i413549.png",
+            "name": "IPhone",
+            "description": "Celular da marca Apple",
+            "price": 8000
+        },
+        {
+            "id": 2,
+            "photo": "https://t.ctcdn.com.br/DZEL1eXZSNDdDIZ4yJEqBPgD6As=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i413740.png",
+            "name": "Galaxy",
+            "description": "Celular da marca Samsung",
+            "price": 6000
+        },
+        {
+            "id": 3,
+            "photo": "https://t.ctcdn.com.br/lscSlnlXHUpkVGQy9gjo5RyWIRU=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i445041.png",
+            "name": "Redmi",
+            "description": "Celular da marca Xiaomi",
+            "price": 3000
+        },
+        {
+            "id": 4,
+            "photo": "https://t.ctcdn.com.br/5Nf5QKu4DcQWT60fPRhdkLk_-mc=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i413549.png",
+            "name": "Moto G",
+            "description": "Celular da marca Motorola",
+            "price": 2000
+        },
+        {
+            "id": 5,
+            "photo": "https://t.ctcdn.com.br/7ZFmMF1czbWk8J0giNaxM525iaM=/fit-in/400x400/filters:fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i464423.png",
+            "name": "Mate",
+            "description": "Celular da marca Huawei",
+            "price": 2500
+        }
+    ]
+}

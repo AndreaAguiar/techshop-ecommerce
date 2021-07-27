@@ -4,7 +4,16 @@ import Cart from '../../assets/cart.png';
 
 import { Container } from './style';
 
-import api from '../../services/api';
+// import api from '../../services/api';
+
+import * as jsonfile from './server.json';
+
+import { useCallback } from 'react';
+
+type IClient = {
+  name: string,
+  email: string,
+}
 
 interface IProduct {
   id: number;
@@ -18,12 +27,49 @@ const Home: React.FC = () => {
   const [data, setData] = useState<IProduct[]>([]);
   const [cart, setCart] = useState<IProduct[]>([]);
 
-  useEffect(() => {
-    api.get('').then(
-      response => {
-        setData(response.data)
+  const clientStart: IClient = {
+    name: "",
+    email: "",
+  };
+
+  const [client, setClient] = useState(clientStart);
+  var listaClient = [];
+
+  const handleChangeClient = useCallback(
+    (e) => {
+      setClient({
+        ...client,
+        [e.target.name]: e.target.value,
+      });
+    },
+    [client]
+  );
+  const handleSubmitClient =
+    (e: { preventDefault: () => void; }) => {
+      e.preventDefault();
+      listaClient.push(client);
+      let clients = [];
+      if (
+        client.name &&
+        client.email
+      ) {
+        clients.push(client);
+        localStorage.setItem("clients", JSON.stringify(clients));
+        alert("Cliente Cadastrado");
+
+        return true;
       }
-    )
+      alert("Preencha todos os campos");
+      return false;
+    }
+
+  useEffect(() => {
+    setData(jsonfile.produtos);
+    // api.get('').then(
+    //   response => {
+    //     setData(response.data)
+    //   }
+    // )
   }, [])
 
   const handleCart = (index: number) => {
@@ -56,17 +102,17 @@ const Home: React.FC = () => {
         ))}
       </section>
       <section className="section-two">
-      <h4>Cadastre-se</h4>
-      <div className="cadastro">
-        <form className="form">
-          <input type="text" placeholder="Name" id="nome"/>
-          <input type="text" placeholder="E-mail" id="email"/>
-          <input type="submit" value="Cadastrar"/>
-        </form>
-      </div>
+        <h4>Cadastre-se</h4>
+        <div className="cadastro">
+          <form className="form" onSubmit={handleSubmitClient}>
+          <input value={client.name} onChange={handleChangeClient} type="text" name="name" placeholder="Name" id="nome" />
+          <input value={client.email} onChange={handleChangeClient} type="email" name="email" placeholder="E-mail" id="email" />
+          <input type="submit" value="Cadastrar" />
+          </form>
+        </div>
       </section>
     </Container>
-          );
+  );
 }
 
-          export default Home;
+export default Home;

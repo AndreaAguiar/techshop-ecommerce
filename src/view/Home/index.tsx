@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import Cart from '../../assets/cart.png';
 
@@ -7,8 +7,6 @@ import { Container } from './style';
 // import api from '../../services/api';
 
 import * as jsonfile from './server.json';
-
-import { useCallback } from 'react';
 
 type IClient = {
   name: string,
